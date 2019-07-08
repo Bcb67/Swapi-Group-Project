@@ -7,10 +7,12 @@ import { Component, OnInit } from '@angular/core';
 
 })
 export class SearchComponent implements OnInit {
+  sTerm = '';
   styleUrls: ['./search.component.css']
   dropdownValue = 'Pick a Category';
   setDropdownValue(input) {
-    this.dropdownValue = input
+    this.dropdownValue = input;
+    console.log(this.sTerm)
   }
   
   constructor() { }

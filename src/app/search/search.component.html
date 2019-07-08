@@ -1,9 +1,9 @@
-<input type= "text" />
+<input [(ngModel)]="sTerm" placeholder={{dropdownValue}} type= "text" />
 <button mat-button [matMenuTriggerFor]='menu'>
     {{dropdownValue}}
 </button>
 <mat-menu #menu='matMenu'>
-    <button value='People' mat-menu-item (click)='setDropdownValue("People")'>People</button>
-    <button value='Ships' mat-menu-item (click)='setDropdownValue("Ships")'>Ships</button>
-    <button value='Films' mat-menu-item (click)='setDropdownValue("Films")'>Films</button>
+    <button mat-menu-item (click)='setDropdownValue("People")'>People</button>
+    <button mat-menu-item (click)='setDropdownValue("Ships")'>Ships</button>
+    <button mat-menu-item (click)='setDropdownValue("Films")'>Films</button>
 </mat-menu>
