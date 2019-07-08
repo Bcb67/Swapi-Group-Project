@@ -29,7 +29,7 @@ import { HttpClientModule } from '@angular/common/http';
     MatCheckboxModule,
     MatMenuModule,
     MatCardModule,
-    MatGridListModule
+    MatGridListModule,
     FormsModule,
     HttpClientModule
   ],
