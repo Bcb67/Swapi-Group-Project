@@ -10,6 +10,7 @@ export class SearchComponent implements OnInit {
   setDropdownValue(input) {
     this.dropdownValue = input
   }
+  
   constructor() { }
 
   ngOnInit() {
