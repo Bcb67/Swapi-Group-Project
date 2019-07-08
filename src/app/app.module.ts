@@ -6,9 +6,11 @@ import { AppComponent } from './app.component';
 import { SearchComponent } from './search/search.component';
 import { DisplayComponent } from './display/display.component';
 
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations'
-import {MatButtonModule, MatCheckboxModule} from '@angular/material'
-import {MatMenuModule} from '@angular/material/menu'
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
+import { MatButtonModule, MatCheckboxModule } from '@angular/material'
+import { MatMenuModule } from '@angular/material/menu'
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -22,7 +24,9 @@ import {MatMenuModule} from '@angular/material/menu'
     BrowserAnimationsModule,
     MatButtonModule,
     MatCheckboxModule,
-    MatMenuModule
+    MatMenuModule,
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
