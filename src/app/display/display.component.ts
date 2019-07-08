@@ -10,7 +10,7 @@ export class DisplayComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    
+
   }
 
 }
