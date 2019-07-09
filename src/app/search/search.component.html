@@ -15,17 +15,39 @@
     </div>
 </div>
 <hr />
-<mat-grid-list cols="4" rowHeight="2:1">
-    <mat-grid-tile>
-        <mat-card>
-            <mat-card-title>TITLE</mat-card-title>
-            <mat-card-content>CONTENT CONTENT CONTENT</mat-card-content>
-        </mat-card>
-    </mat-grid-tile>
-    <mat-grid-tile>
-        <mat-card>card2</mat-card>
-    </mat-grid-tile>
-    <!-- <mat-grid-tile>3</mat-grid-tile>
-    <mat-grid-tile>4</mat-grid-tile>
-    <mat-grid-tile>5</mat-grid-tile> -->
-</mat-grid-list>
+<mat-card>
+    <mat-card-title *ngIf= "dropdownValue !=='films'">{{person.name}}</mat-card-title>
+    <mat-card-title *ngIf= "dropdownValue =='films'">{{person.title}}</mat-card-title>
+    <mat-grid-list cols="2" rowHeight="1:1">
+        <mat-card-content>
+            <div *ngIf="dropdownValue == 'people'">
+                <ol>
+                    <li>Birth Year: {{person.birth_year}}</li>
+                    <li>Height: {{person.height}}</li>
+                    <li>Hair Color: {{person.hair_color}}</li>
+                    <li>Eye Color: {{person.eye_color}}</li>
+                    <li>Gender: {{person.gender}}</li>
+                    <li>Mass: {{person.mass}}</li>
+                </ol>
+            </div>
+            <div *ngIf="dropdownValue == 'starships'">
+                <ol>
+                    <li>Hyper Drive Rating: {{person.hyperdrive_rating}}</li>
+                    <li>Manufacturer: {{person.manufacturer}}</li>
+                    <li>Model: {{person.model}}</li>
+                    <li>Starship Class: {{person.starship_class}}</li>
+                    <li>Cost in Credits: {{person.cost_in_credits}}</li>
+                    <li>Crew: {{person.crew}}</li>
+                </ol>
+            </div>
+            <div *ngIf="dropdownValue== 'films'">
+                <ol>
+                    <li>Director: {{person.director}}</li>
+                    <li>Producers: {{person.producer}}</li>
+                    <li>Episode Number: {{person.episode_id}}</li>
+                    <li>Opening Crawl: {{person.opening_crawl}}</li>
+                </ol>
+            </div>
+        </mat-card-content>
+    </mat-grid-list>
+</mat-card>
