@@ -14,9 +14,15 @@ export class SearchComponent implements OnInit {
   styleUrls: ['./search.component.css']
   dropdownValue = 'Pick a Category';
   peopleUrl=''
+  searchT = ''
   setDropdownValue(input) {
     this.dropdownValue = input;
-    this.peopleUrl = `https://swapi.co/api/${this.dropdownValue}/?search=${this.sTerm}` 
+    if(this.sTerm !== '') {
+      this.searchT = `/?search=${this.sTerm}`
+    } else {
+      this.searchT = ''
+    }
+    this.peopleUrl = `https://swapi.co/api/${this.dropdownValue}${this.searchT}` 
   }
   
 
