@@ -11,13 +11,13 @@
             <button value='Films' mat-menu-item (click)='setDropdownValue("films")'>Films</button>
         </mat-menu>
         <br />
-        <button mat-button (click)="fetchInfo()">Search</button>
+        <button id="submit" mat-button (click)="fetchInfo()">Search</button>
     </div>
 </div>
 <hr />
 <mat-card>
-    <mat-card-title *ngIf= "dropdownValue !=='films'">{{person.name}}</mat-card-title>
-    <mat-card-title *ngIf= "dropdownValue =='films'">{{person.title}}</mat-card-title>
+    <mat-card-title class="bigword" *ngIf= "dropdownValue !=='films'">{{person.name}}</mat-card-title>
+    <mat-card-title class="bigword" *ngIf= "dropdownValue =='films'">{{person.title}}</mat-card-title>
     <mat-grid-list cols="2" rowHeight="1:1">
         <mat-card-content>
             <div *ngIf="dropdownValue == 'people'">

@@ -1,0 +1,33 @@
+input {
+    font-size: 1.5em;
+    border-radius: 5px;
+}
+
+button {
+    font-size: 1.5em
+}
+
+div {
+    text-align: center;
+}
+
+#submit {
+    margin-left: 45%
+}
+
+button {
+    margin:  1em 0
+}
+
+ol {
+    list-style-type: none
+}
+li {
+    font-size: 2em
+}
+.bigword {
+    font-size: 2em;
+    text-align: center;
+    margin-left: 2%;
+    color: yellow
+}
