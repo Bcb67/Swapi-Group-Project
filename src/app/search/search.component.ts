@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { SearchService } from './search.service';
-import { HttpResponse, HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { HttpClient } from '@angular/common/http';
 
 
 @Component({
@@ -12,41 +10,34 @@ import { Observable } from 'rxjs';
 })
 export class SearchComponent implements OnInit {
   sTerm = '';
+  person= '';
   styleUrls: ['./search.component.css']
   dropdownValue = 'Pick a Category';
+  peopleUrl=''
   setDropdownValue(input) {
     this.dropdownValue = input;
-    console.log(this.getConfigResponse())
-  }
-
-  config: Config;
-
-  showConfig() {
-    this.searchService.getConfig()
-      // .subscribe((data:Config) => this.config = {
-      //   SWAPIUrl: data['SWAPIUrl'],
-      //   textfile: data['textfile']
-      // });
-      .subscribe((data: Config) => this.config = {...data});
-  }
-
-  getConfigResponse(): Observable<HttpResponse<Config>> {
-    return this.http.get<Config>(
-      'http://swapi.co/api/people/', {observe: 'response' });
+    this.peopleUrl = `https://swapi.co/api/${this.dropdownValue}/?search=${this.sTerm}` 
   }
   
+
   
+  fetchInfo() {
+    console.log('Fetching values')
+    console.log(this.peopleUrl)
+    this.http.get(this.peopleUrl)
+      .subscribe(
+        (data: any) => {
+          this.person = data.results[0]
+        })
+    console.log(this.person)
+  }
 
   constructor(
-    private searchService: SearchService,
     private http: HttpClient,
   ) { }
 
   ngOnInit() {
+    
   }
 
-}
-export interface Config {
-  SWAPIUrl: string;
-  textfile: string;
 }
