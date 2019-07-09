@@ -1,1 +1,54 @@
-<p>search works!</p>
+<div value="sTerm">
+    <div value="dropdownValue">
+
+        <input [(ngModel)]="sTerm" placeholder={{dropdownValue}} type="text" />
+        <button mat-button [matMenuTriggerFor]='menu'>
+            {{dropdownValue}}
+        </button>
+        <mat-menu #menu='matMenu'>
+            <button value='People' mat-menu-item (click)='setDropdownValue("people")'>People</button>
+            <button value='Starships' mat-menu-item (click)='setDropdownValue("starships")'>Starships</button>
+            <button value='Films' mat-menu-item (click)='setDropdownValue("films")'>Films</button>
+        </mat-menu>
+        <br />
+        <button id="submit" mat-button (click)="fetchInfo()">Search</button>
+    </div>
+</div>
+<hr />
+<mat-card id="card">
+    <mat-card-title class="bigword" *ngIf= "dropdownValue !=='films'">{{person.name}}</mat-card-title>
+    <mat-card-title class="bigword" *ngIf= "dropdownValue =='films'">{{person.title}}</mat-card-title>
+    <mat-grid-list cols="2" rowHeight="1:1">
+        <mat-card-content>
+            <div id= "people" *ngIf="dropdownValue == 'people'">
+                <ol>
+                    <li>Birth Year: {{person.birth_year}}</li>
+                    <li>Height: {{person.height}}</li>
+                    <li>Hair Color: {{person.hair_color}}</li>
+                    <li>Eye Color: {{person.eye_color}}</li>
+                    <li>Gender: {{person.gender}}</li>
+                    <li>Mass: {{person.mass}}</li>
+                </ol>
+            </div>
+            <div id = "starships" *ngIf="dropdownValue == 'starships'">
+                <ol>
+                    <li>Hyper Drive Rating: {{person.hyperdrive_rating}}</li>
+                    <li>Manufacturer: {{person.manufacturer}}</li>
+                    <li>Model: {{person.model}}</li>
+                    <li>Starship Class: {{person.starship_class}}</li>
+                    <li>Cost in Credits: {{person.cost_in_credits}}</li>
+                    <li>Crew: {{person.crew}}</li>
+                </ol>
+            </div>
+            <div id= "films" *ngIf="dropdownValue== 'films'">
+                <ol>
+                    <li>Director: {{person.director}}</li>
+                    <li>Producers: {{person.producer}}</li>
+                    <li>Episode Number: {{person.episode_id}}</li>
+                    <li id="crawl">Opening Crawl: {{person.opening_crawl}}</li>
+                </ol>
+            </div>
+        </mat-card-content>
+    </mat-grid-list>
+</mat-card>
+
