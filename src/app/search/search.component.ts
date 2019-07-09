@@ -11,18 +11,18 @@ import { HttpClient } from '@angular/common/http';
 export class SearchComponent implements OnInit {
   sTerm = '';
   person= '';
-  styleUrls: ['./search.component.css']
+  styleUrls: ['./search.component.css'];
   dropdownValue = 'Pick a Category';
-  peopleUrl=''
-  searchT = ''
+  peopleUrl='';
+  searchT = '';
   setDropdownValue(input) {
     this.dropdownValue = input;
     if(this.sTerm !== '') {
-      this.searchT = `/?search=${this.sTerm}`
+      this.searchT = `?search=${this.sTerm}`;
     } else {
-      this.searchT = ''
+      this.searchT = '';
     }
-    this.peopleUrl = `https://swapi.co/api/${this.dropdownValue}${this.searchT}` 
+    this.peopleUrl = `https://swapi.co/api/${this.dropdownValue}/${this.searchT}`;
   }
   
 
