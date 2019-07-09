@@ -1,22 +1,30 @@
-<input [(ngModel)]="sTerm" placeholder={{dropdownValue}} type= "text" />
-<button mat-button [matMenuTriggerFor]='menu'>
-    {{dropdownValue}}
-</button>
-<mat-menu #menu='matMenu'>
-    <button value='People' mat-menu-item (click)='setDropdownValue("People")'>People</button>
-    <button value='Ships' mat-menu-item (click)='setDropdownValue("Ships")'>Ships</button>
-    <button value='Films' mat-menu-item (click)='setDropdownValue("Films")'>Films</button>
-    
-    <button mat-menu-item (click)='setDropdownValue("People")'>People</button>
-    <button mat-menu-item (click)='setDropdownValue("Ships")'>Ships</button>
-    <button mat-menu-item (click)='setDropdownValue("Films")'>Films</button>
-</mat-menu>
-<br />
-<button mat-button>Search</button>
+<div value="sTerm">
+    <div value="dropdownValue">
+
+        <input [(ngModel)]="sTerm" placeholder={{dropdownValue}} type="text" />
+        <button mat-button [matMenuTriggerFor]='menu'>
+            {{dropdownValue}}
+        </button>
+        <mat-menu #menu='matMenu'>
+            <button value='People' mat-menu-item (click)='setDropdownValue("people")'>People</button>
+            <button value='Ships' mat-menu-item (click)='setDropdownValue("starships")'>Ships</button>
+            <button value='Films' mat-menu-item (click)='setDropdownValue("films")'>Films</button>
+        </mat-menu>
+        <br />
+        <button mat-button (click)="fetchInfo()">Search</button>
+    </div>
+</div>
 <hr />
-<mat-grid-list cols= "1" rowHeight= "2:1">
-    <mat-grid-tile><mat-card><mat-card-title>TITLE</mat-card-title><mat-card-content>CONTENT CONTENT CONTENT</mat-card-content></mat-card></mat-grid-tile>
-    <mat-grid-tile><mat-card>card2</mat-card></mat-grid-tile>
+<mat-grid-list cols="4" rowHeight="2:1">
+    <mat-grid-tile>
+        <mat-card>
+            <mat-card-title>TITLE</mat-card-title>
+            <mat-card-content>CONTENT CONTENT CONTENT</mat-card-content>
+        </mat-card>
+    </mat-grid-tile>
+    <mat-grid-tile>
+        <mat-card>card2</mat-card>
+    </mat-grid-tile>
     <!-- <mat-grid-tile>3</mat-grid-tile>
     <mat-grid-tile>4</mat-grid-tile>
     <mat-grid-tile>5</mat-grid-tile> -->
