@@ -20,7 +20,7 @@
     <mat-card-title class="bigword" *ngIf= "dropdownValue =='films'">{{person.title}}</mat-card-title>
     <mat-grid-list cols="2" rowHeight="1:1">
         <mat-card-content>
-            <div *ngIf="dropdownValue == 'people'">
+            <div id= "people" *ngIf="dropdownValue == 'people'">
                 <ol>
                     <li>Birth Year: {{person.birth_year}}</li>
                     <li>Height: {{person.height}}</li>
@@ -30,7 +30,7 @@
                     <li>Mass: {{person.mass}}</li>
                 </ol>
             </div>
-            <div *ngIf="dropdownValue == 'starships'">
+            <div id = "starships" *ngIf="dropdownValue == 'starships'">
                 <ol>
                     <li>Hyper Drive Rating: {{person.hyperdrive_rating}}</li>
                     <li>Manufacturer: {{person.manufacturer}}</li>
@@ -40,12 +40,12 @@
                     <li>Crew: {{person.crew}}</li>
                 </ol>
             </div>
-            <div *ngIf="dropdownValue== 'films'">
+            <div id= "films" *ngIf="dropdownValue== 'films'">
                 <ol>
                     <li>Director: {{person.director}}</li>
                     <li>Producers: {{person.producer}}</li>
                     <li>Episode Number: {{person.episode_id}}</li>
-                    <li>Opening Crawl: {{person.opening_crawl}}</li>
+                    <li id="crawl">Opening Crawl: {{person.opening_crawl}}</li>
                 </ol>
             </div>
         </mat-card-content>
